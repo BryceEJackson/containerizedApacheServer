@@ -1,0 +1,11 @@
+# Use the official Apache image from the Docker Hub
+FROM httpd:2.4
+
+# Copy your local Apache configuration file to the container
+COPY ./my-apache.conf /usr/local/apache2/conf/httpd.conf
+
+# If you have custom HTML or other content, copy it to the container
+COPY ./html/ /usr/local/apache2/htdocs/
+
+# Expose port 80 for the Apache server
+EXPOSE 80
